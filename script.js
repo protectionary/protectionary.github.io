@@ -1,8 +1,8 @@
-// Configuration
+
 const DISCORD_USER_ID = '1303056358844665969';
 const LANYARD_WS_URL = 'wss://api.lanyard.rest/socket';
 
-// Variables globales
+
 let socket = null;
 let heartbeatInterval = null;
 let spotifyUpdateInterval = null;
@@ -12,7 +12,7 @@ let cursorX = 0;
 let cursorY = 0;
 let isTyping = false;
 
-// Initialisation
+
 document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initCustomCursor();
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCopyFeature();
 });
 
-// Smooth scroll avec Lenis
+
 function initSmoothScroll() {
     const lenis = new Lenis({
         duration: 1.2,
@@ -44,24 +44,24 @@ function initSmoothScroll() {
     requestAnimationFrame(raf);
 }
 
-// Curseur personnalisé
+
 function initCustomCursor() {
     const cursor = document.getElementById('cursor');
     const cursorDot = cursor.querySelector('.cursor-dot');
     const cursorRing = cursor.querySelector('.cursor-ring');
     
-    // Éléments interactifs
+
     const interactiveElements = document.querySelectorAll(
         'a, button, .card, .skill-tag, .skill-expand, .avatar, .link-item'
     );
     
-    // Suivi de la souris
+
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
     
-    // Animation fluide du curseur
+
     function animateCursor() {
         const dx = mouseX - cursorX;
         const dy = mouseY - cursorY;
@@ -79,7 +79,7 @@ function initCustomCursor() {
     }
     animateCursor();
     
-    // États du curseur
+
     document.addEventListener('mousedown', () => {
         cursor.classList.add('click');
     });
@@ -88,7 +88,7 @@ function initCustomCursor() {
         cursor.classList.remove('click');
     });
     
-    // Hover sur éléments interactifs
+
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
             cursor.classList.add('hover');
@@ -100,7 +100,7 @@ function initCustomCursor() {
     });
 }
 
-// Effet de frappe
+
 function initTypingEffect() {
     const typingElement = document.getElementById('typing-text');
     const text = 'protectionary';
@@ -117,7 +117,7 @@ function initTypingEffect() {
     setTimeout(typeWriter, 1000);
 }
 
-// Particules flottantes
+
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
     const particleCount = 50;
@@ -125,20 +125,19 @@ function createParticles() {
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
-        
-        // Position et taille aléatoires
+
         particle.style.left = Math.random() * 100 + '%';
         particle.style.animationDelay = Math.random() * 15 + 's';
         particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
         
-        // Opacité aléatoire
+
         particle.style.opacity = Math.random() * 0.1 + 0.05;
         
         particlesContainer.appendChild(particle);
     }
 }
 
-// Connexion Lanyard pour Discord
+
 function connectToLanyard() {
     if (socket) {
         socket.close();
@@ -154,14 +153,14 @@ function connectToLanyard() {
         const data = JSON.parse(event.data);
         
         if (data.op === 1) {
-            // Heartbeat
+
             heartbeatInterval = setInterval(() => {
                 if (socket.readyState === WebSocket.OPEN) {
                     socket.send(JSON.stringify({ op: 3 }));
                 }
             }, data.d.heartbeat_interval);
             
-            // Subscribe to user
+
             socket.send(JSON.stringify({
                 op: 2,
                 d: {
@@ -182,7 +181,7 @@ function connectToLanyard() {
             clearInterval(spotifyUpdateInterval);
         }
         
-        // Reconnexion automatique
+
         setTimeout(connectToLanyard, 5000);
     };
 
@@ -191,7 +190,7 @@ function connectToLanyard() {
     };
 }
 
-// Mise à jour du statut Discord
+
 function updateDiscordStatus(data) {
     const avatarElement = document.getElementById('avatar');
     const statusDot = document.getElementById('status-dot');
@@ -200,13 +199,13 @@ function updateDiscordStatus(data) {
     const discordActivity = document.getElementById('discord-activity');
     const spotifyCard = document.getElementById('spotify-card');
 
-    // Avatar Discord
+
     if (data.discord_user && data.discord_user.avatar) {
         const avatarUrl = `https://cdn.discordapp.com/avatars/${data.discord_user.id}/${data.discord_user.avatar}.png?size=256`;
         avatarElement.src = avatarUrl;
     }
 
-    // Statut Discord
+
     if (data.discord_status) {
         statusDot.className = `status-dot ${data.discord_status}`;
         statusBadge.className = `status-badge ${data.discord_status}`;
@@ -221,7 +220,7 @@ function updateDiscordStatus(data) {
         statusBadge.textContent = statusTexts[data.discord_status] || 'Unknown';
     }
 
-    // Activité Discord
+
     if (data.activities && data.activities.length > 0) {
         const activity = data.activities.find(a => a.type !== 4 && a.name !== 'Spotify');
         
@@ -234,7 +233,6 @@ function updateDiscordStatus(data) {
         hideDiscordActivity();
     }
 
-    // Spotify
     if (data.spotify) {
         spotifyCard.style.display = 'block';
         updateSpotifyInfo(data.spotify);
@@ -254,7 +252,7 @@ function updateDiscordStatus(data) {
     }
 }
 
-// Afficher l'activité Discord
+
 function displayDiscordActivity(activity) {
     const discordActivity = document.getElementById('discord-activity');
     const activityImage = document.getElementById('activity-image');
@@ -263,7 +261,6 @@ function displayDiscordActivity(activity) {
     
     discordActivity.style.display = 'flex';
     
-    // Image de l'activité
     if (activity.assets && activity.assets.large_image && activity.application_id) {
         let iconUrl;
         if (activity.assets.large_image.startsWith('mp:')) {
@@ -278,18 +275,16 @@ function displayDiscordActivity(activity) {
         activityImage.style.display = 'none';
     }
     
-    // Informations de l'activité
+
     activityName.textContent = activity.name;
     activityDetails.textContent = activity.state || activity.details || 'Playing';
 }
 
-// Masquer l'activité Discord
 function hideDiscordActivity() {
     const discordActivity = document.getElementById('discord-activity');
     discordActivity.style.display = 'none';
 }
 
-// Mise à jour des informations Spotify
 function updateSpotifyInfo(spotify) {
     const albumCover = document.getElementById('album-cover');
     const trackTitle = document.getElementById('track-title');
@@ -303,7 +298,7 @@ function updateSpotifyInfo(spotify) {
     trackArtist.textContent = spotify.artist || 'Unknown Artist';
 }
 
-// Mise à jour de la progression Spotify
+
 function updateSpotifyProgress(spotify) {
     const progressBar = document.getElementById('progress-bar');
     const currentTime = document.getElementById('current-time');
@@ -322,7 +317,7 @@ function updateSpotifyProgress(spotify) {
     }
 }
 
-// Formater le temps
+
 function formatTime(ms) {
     const seconds = Math.floor(ms / 1000);
     const minutes = Math.floor(seconds / 60);
@@ -331,7 +326,7 @@ function formatTime(ms) {
     return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
 }
 
-// Fonctionnalité de copie
+
 function initCopyFeature() {
     const copyElements = document.querySelectorAll('[data-copy]');
     
@@ -350,9 +345,8 @@ function initCopyFeature() {
     });
 }
 
-// Afficher une notification
+
 function showNotification(message) {
-    // Supprimer les notifications existantes
     const existingNotifications = document.querySelectorAll('.notification');
     existingNotifications.forEach(notif => notif.remove());
     
@@ -361,13 +355,11 @@ function showNotification(message) {
     notification.textContent = message;
     
     document.body.appendChild(notification);
-    
-    // Animation d'apparition
+
     setTimeout(() => {
         notification.classList.add('show');
     }, 10);
-    
-    // Suppression automatique
+
     setTimeout(() => {
         notification.classList.remove('show');
         setTimeout(() => {
@@ -376,4 +368,5 @@ function showNotification(message) {
             }
         }, 300);
     }, 3000);
+
 }

@@ -1,4 +1,3 @@
-/* Reset et base */
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +19,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Masquer la scrollbar */
 body::-webkit-scrollbar {
     display: none;
 }
@@ -30,7 +28,6 @@ body {
     scrollbar-width: none;
 }
 
-/* Curseur personnalisé */
 .cursor {
     position: fixed;
     top: 0;
@@ -83,7 +80,6 @@ body {
     height: 24px;
 }
 
-/* Grille de fond */
 .grid-background {
     position: fixed;
     top: 0;
@@ -99,7 +95,6 @@ body {
     z-index: 1;
 }
 
-/* Particules */
 .particles {
     position: fixed;
     top: 0;
@@ -136,7 +131,6 @@ body {
     }
 }
 
-/* Container principal */
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -145,7 +139,6 @@ body {
     z-index: 10;
 }
 
-/* Section Hero */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -315,7 +308,7 @@ body {
 
 .scroll-indicator {
     position: absolute;
-    bottom: -6rem; /* Encore plus bas */
+    bottom: -6rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -346,7 +339,6 @@ body {
     50% { opacity: 1; }
 }
 
-/* Section principale */
 .main-content {
     padding: 4rem 0;
 }
@@ -365,7 +357,7 @@ body {
     gap: 2rem;
 }
 
-/* Cards */
+
 .card {
     background: rgba(15, 15, 15, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -420,7 +412,7 @@ body {
     flex: 1;
 }
 
-/* Discord Card */
+
 .discord-card {
     background: linear-gradient(135deg, rgba(88, 101, 242, 0.1), rgba(15, 15, 15, 0.8));
 }
@@ -494,7 +486,7 @@ body {
     text-overflow: ellipsis;
 }
 
-/* Skills Card */
+
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -540,8 +532,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Spotify Card */
-/* === SPOTIFY CARD - NOUVEAU STYLE === */
+
 .spotify-card {
     background: linear-gradient(135deg, rgba(29, 185, 84, 0.15), rgba(15, 15, 15, 0.9));
     border: 1px solid rgba(29, 185, 84, 0.3);
@@ -551,21 +542,19 @@ body {
     color: #1db954;
 }
 
-/* Contenu principal */
 .spotify-content {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
 }
 
-/* Section du haut - Album + Infos */
 .spotify-top {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-/* Album artwork */
+
 .album-artwork {
     position: relative;
     width: 64px;
@@ -583,7 +572,7 @@ body {
     border-radius: 8px;
 }
 
-/* Indicateur de musique */
+
 .music-indicator {
     position: absolute;
     bottom: 6px;
@@ -625,7 +614,7 @@ body {
     }
 }
 
-/* Détails de la piste */
+
 .track-details {
     flex: 1;
     min-width: 0;
@@ -651,7 +640,7 @@ body {
     line-height: 1.2;
 }
 
-/* Section du bas - Progression */
+
 .spotify-bottom {
     width: 100%;
 }
@@ -662,7 +651,6 @@ body {
     gap: 0.6rem;
 }
 
-/* Barre de progression */
 .progress-track {
     width: 100%;
     height: 4px;
@@ -699,7 +687,6 @@ body {
     opacity: 1;
 }
 
-/* Informations de temps */
 .time-info {
     display: flex;
     justify-content: space-between;
@@ -709,7 +696,7 @@ body {
     font-weight: 500;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .spotify-top {
         flex-direction: column;
@@ -736,7 +723,7 @@ body {
     }
 }
 
-/* États de hover */
+
 .spotify-card:hover {
     border-color: rgba(29, 185, 84, 0.5);
     background: linear-gradient(135deg, rgba(29, 185, 84, 0.2), rgba(15, 15, 15, 0.9));
@@ -752,7 +739,7 @@ body {
     pointer-events: none;
 }
 
-/* Responsive pour mobile */
+
 @media (max-width: 768px) {
     .spotify-content {
         flex-direction: column;
@@ -850,7 +837,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* Footer */
+
 .footer {
     padding: 3rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -875,7 +862,7 @@ body {
     color: #555;
 }
 
-/* Notifications */
+
 .copy-notification {
     position: fixed;
     top: 2rem;
@@ -904,7 +891,7 @@ body {
     opacity: 0;
 }
 
-/* Responsive */
+
 @media (max-width: 1024px) {
     .content-grid {
         grid-template-columns: 1fr;
@@ -983,4 +970,5 @@ body {
         font-size: 0.8rem;
         padding: 0.4rem 0.8rem;
     }
+
 }

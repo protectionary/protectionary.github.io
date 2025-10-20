@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>おはようございます, こんにちは</title>
-    
-    <!-- Favicon -->
     <link id="dynamic-favicon" rel="icon" type="image/png" href="1.png">
 
     <link rel="stylesheet" href="style.css">
@@ -13,8 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
-
-    <!-- Animated Favicon Script -->
     <script>
         const frames = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"];
         let current = 0;
@@ -26,20 +22,14 @@
 </head>
 
 <body>
-    <!-- Curseur personnalisé -->
     <div class="cursor" id="cursor">
         <div class="cursor-dot"></div>
         <div class="cursor-ring"></div>
     </div>
-    
-    <!-- Particules flottantes -->
     <div class="particles" id="particles"></div>
-    
-    <!-- Grille de fond -->
     <div class="grid-background"></div>
     
     <main class="container">
-        <!-- Section Hero -->
         <section class="hero-section">
             <div class="hero-content">
                 <div class="profile-container">
@@ -81,13 +71,9 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Section principale -->
         <section class="main-content">
             <div class="content-grid">
-                <!-- Colonne gauche -->
                 <div class="left-column">
-                    <!-- Discord Status -->
                     <div class="card discord-card" id="discord-card">
                         <div class="card-header">
                             <div class="card-icon discord-icon">
@@ -107,8 +93,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Skills -->
                     <div class="card skills-card">
                         <div class="card-header">
                             <div class="card-icon">
@@ -129,15 +113,13 @@
                             <div class="skill-tag">C#</div>
                             <div class="skill-tag">PHP</div>
                             <div class="skill-tag">TypeScript</div>
-                            <div class="skill-tag">Vue.js</div>
+                            <div class="skill-tag">Lua</div>
                             <div class="skill-tag">MongoDB</div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Colonne droite -->
                 <div class="right-column">
-                    <!-- Spotify -->
+
                     <div class="card spotify-card" id="spotify-card" style="display: none;">
                         <div class="card-header">
                             <div class="card-icon spotify-icon">
@@ -149,7 +131,7 @@
                         </div>
                         
                         <div class="spotify-content">
-                            <!-- En-tête avec album et infos -->
+
                             <div class="spotify-top">
                                 <div class="album-artwork">
                                     <img id="album-cover" src="" alt="Album Cover">
@@ -169,7 +151,7 @@
                                 </div>
                             </div>
                             
-                            <!-- Barre de progression en bas -->
+
                             <div class="spotify-bottom">
                                 <div class="progress-section">
                                     <div class="progress-track">
@@ -184,7 +166,7 @@
                         </div>
                     </div>
                     
-                    <!-- Links -->
+
                     <div class="card links-card">
                         <div class="card-header">
                             <div class="card-icon">
@@ -239,7 +221,7 @@
             </div>
         </section>
         
-        <!-- Footer -->
+
         <footer class="footer">
             <div class="footer-content">
                 <p>© 2025 • made with &lt;3</p>
@@ -253,4 +235,5 @@
     
     <script src="script.js"></script>
 </body>
+
 </html>

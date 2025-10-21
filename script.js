@@ -1,7 +1,10 @@
 
 const DISCORD_USER_ID = '1303056358844665969';
 const LANYARD_WS_URL = 'wss://api.lanyard.rest/socket';
-
+const tracks = [
+    'Husband.m4a',
+    'Lifestye.m4a',
+];
 
 let socket = null;
 let heartbeatInterval = null;
@@ -12,6 +15,21 @@ let cursorX = 0;
 let cursorY = 0;
 let isTyping = false;
 
+let currentTrack = 0;
+const audio = new Audio();
+audio.src = tracks[currentTrack];
+audio.play().catch(err => console.log('Autoplay blocked:', err));
+audio.addEventListener('ended', () => {
+    currentTrack++;
+    if (currentTrack >= tracks.length) {
+        currentTrack = 0;
+    }
+    audio.src = tracks[currentTrack];
+    audio.play().catch(err => console.log('Autoplay blocked:', err));
+});
+window.addEventListener('load', () => {
+    audio.play().catch(err => console.log('Autoplay blocked:', err));
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
@@ -370,3 +388,4 @@ function showNotification(message) {
     }, 3000);
 
 }
+

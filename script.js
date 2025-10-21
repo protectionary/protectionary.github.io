@@ -2,8 +2,8 @@
 const DISCORD_USER_ID = '1303056358844665969';
 const LANYARD_WS_URL = 'wss://api.lanyard.rest/socket';
 const tracks = [
-    'Husband.m4a',
-    'Lifestyle.m4a',
+    'hb.mp3',
+    'ls.mp3',
 ];
 
 let socket = null;
@@ -388,5 +388,6 @@ function showNotification(message) {
     }, 3000);
 
 }
+
 
 

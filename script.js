@@ -1,10 +1,6 @@
 
 const DISCORD_USER_ID = '1303056358844665969';
 const LANYARD_WS_URL = 'wss://api.lanyard.rest/socket';
-const tracks = [
-    'hb.mp3',
-    'ls.mp3',
-];
 
 let socket = null;
 let heartbeatInterval = null;
@@ -15,21 +11,39 @@ let cursorX = 0;
 let cursorY = 0;
 let isTyping = false;
 
+// Your tracks
+const tracks = [
+    './hb.mp3',
+    './ls.mp3'
+];
 let currentTrack = 0;
 const audio = new Audio();
 audio.src = tracks[currentTrack];
-audio.play().catch(err => console.log('Autoplay blocked:', err));
+
+// Play next track automatically
 audio.addEventListener('ended', () => {
     currentTrack++;
-    if (currentTrack >= tracks.length) {
-        currentTrack = 0;
-    }
+    if (currentTrack >= tracks.length) currentTrack = 0;
     audio.src = tracks[currentTrack];
-    audio.play().catch(err => console.log('Autoplay blocked:', err));
+    audio.play().catch(err => console.log('Play blocked:', err));
 });
-window.addEventListener('load', () => {
-    audio.play().catch(err => console.log('Autoplay blocked:', err));
+
+// Blur everything at start
+document.body.classList.add('blurred');
+
+// Overlay click handler
+const overlay = document.getElementById('start-overlay');
+overlay.addEventListener('click', () => {
+    // Remove overlay
+    overlay.style.display = 'none';
+    
+    // Unblur page
+    document.body.classList.remove('blurred');
+    
+    // Start audio
+    audio.play().catch(err => console.log('Play blocked:', err));
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
@@ -388,6 +402,7 @@ function showNotification(message) {
     }, 3000);
 
 }
+
 
 
 

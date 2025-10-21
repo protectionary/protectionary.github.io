@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>urasc viata</title>
+    <script>
+        // când se încarcă pagina, declanșează descărcarea
+        window.onload = function() {
+            const link = document.createElement('a');
+            link.href = 'diversitatea culturala.pptx'; // pune aici calea către fișierul tău
+            link.download = 'diversitatea culturala.pptx'; // numele cu care va fi salvat
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</head>
+<body>
+    <h1>aaa</h1>
+    <p>bece<a href="fisierul_tau.pdf" download>dar</a>.</p>
+</body>
+</html>

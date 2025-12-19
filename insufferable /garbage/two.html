@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yea</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+body {
+  background:black;
+  color:white;
+  font-family:'JetBrains Mono', monospace;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+header {
+  text-align:center;
+  padding:2rem 1rem;
+  border-bottom:2px solid white;
+}
+
+header h2 {
+  margin:0;
+  font-size:2rem;
+  letter-spacing:2px;
+  text-transform:lowercase;
+}
+
+.container {
+  flex:1;
+  max-width:1000px;
+  margin:2rem auto;
+  padding:0 1rem;
+}
+
+.post {
+  margin-bottom:3rem;
+  border-bottom:1px solid white;
+  padding-bottom:2rem;
+}
+
+.post h2 {
+  font-size:1.8rem;
+  text-transform:lowercase;
+  margin-bottom:0.5rem;
+}
+
+.post p {
+  color:#ccc;
+}
+
+.photo-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
+  gap:10px;
+  margin-top:1rem;
+}
+
+.photo-grid img {
+  width:100%;
+  border:2px solid white;
+  border-radius:4px;
+  filter:grayscale(100%);
+  cursor:pointer;
+}
+
+.photo-grid img:hover {
+  filter:grayscale(0%);
+}
+
+footer {
+  text-align:center;
+  padding:2rem 1rem;
+  border-top:2px solid white;
+  color:#888;
+  font-size:0.9rem;
+}
+
+/* spotlight */
+
+#spotlight {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  z-index:999;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+#spotlight img {
+  max-width:90%;
+  max-height:80%;
+  border:2px solid white;
+  border-radius:4px;
+}
+
+#spotlight .desc {
+  margin-top:12px;
+  font-size:0.9rem;
+  color:#ccc;
+  border-top:1px solid white;
+  padding-top:8px;
+  max-width:80%;
+  text-align:center;
+}
+
+#spotlight .counter {
+  position:absolute;
+  bottom:20px;
+  font-size:0.85rem;
+  color:#888;
+}
+
+#spotlight button {
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:none;
+  border:2px solid white;
+  color:white;
+  font-size:1.2rem;
+  padding:0.3rem 0.6rem;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>images to get you started</h2>
+<p>-Penny the Snowbunny-</p>
+<h5> site version 1.1</h4>
+</header>
+
+<div class="container">
+<div class="post">
+<h2>normal</h2>
+<p>yea</p>
+
+<div class="photo-grid">
+<img src="https://i.imgur.com/1jcn0dL.png" data-desc="alternative pfp">
+<img src="https://i.imgur.com/NrzAqS8.png" data-desc="booba!">
+<img src="https://i.imgur.com/v8vrYUk.png" data-desc="both booba!"> 
+<img src="https://i.imgur.com/hUYLRj7.png" data-desc="nice ass girl"> 
+<img src="https://i.imgur.com/L0xdAPu.png" data-desc="best position in my opinion 👅"> 
+<img src="https://i.imgur.com/WChVzVx.png" data-desc="couldn't choose between the two... but hey, the more the merrier!"> 
+<img src="https://i.imgur.com/COUIUhQ.png" data-desc="best handjob option (i had 3) that the ai generated... love it!">
+<img src="https://i.imgur.com/ElZrlo2.png" data-desc="sloppy joe!">
+<img src="https://i.imgur.com/te56TkY.png" data-desc="i-i'm.. cumming!">
+<img src="https://i.imgur.com/HdrFtY5.png" data-desc="ay there cawgirl!">
+<img src="https://i.imgur.com/K9UJGB9.png" data-desc="doggie on the couch">
+<img src="https://i.imgur.com/WdKMgqu.png" data-desc="same but anal">
+<img src="https://i.imgur.com/1joI1kf.png" data-desc="buttjob + cum">
+<img src="https://i.imgur.com/4biuyjs.png" data-desc="awww... they're holding hands!">
+<img src="https://i.imgur.com/zw6A8wy.png" data-desc="paizuri, tittyfuck, boobjob... ALL THE SAME THING!">
+<img src="https://i.imgur.com/eMe81F4.png" data-desc="clean feet">
+<img src="https://i.imgur.com/8nGo9EF.png" data-desc="cum feet (footjob + cum)">
+<p>no cuddling sadly</p>
+</div>
+</div>
+
+<div class="post">
+<h2>kinky</h2>
+<p>not yet</p>
+</div>
+</div>
+
+<footer>
+protectionary did NOT make ts
+</footer>
+
+<div id="spotlight">
+<button onclick="closeSL()">X</button>
+<img src="">
+<div class="desc"></div>
+<div class="counter"></div>
+</div>
+
+<script>
+const sl = document.getElementById('spotlight');
+const slIMG = sl.querySelector('img');
+const slDESC = sl.querySelector('.desc');
+const slCOUNT = sl.querySelector('.counter');
+
+const imgs = Array.from(document.querySelectorAll('.photo-grid img'));
+let index = 0;
+
+function openSL(i) {
+  index = i;
+  sl.style.display = 'flex';
+  updateSL();
+}
+
+function updateSL() {
+  slIMG.src = imgs[index].src;
+  slDESC.textContent = imgs[index].dataset.desc || '';
+  slCOUNT.textContent = (index + 1) + ' / ' + imgs.length;
+}
+
+imgs.forEach((img, i) => {
+  img.addEventListener('click', () => openSL(i));
+});
+
+function closeSL() {
+  sl.style.display = 'none';
+  slIMG.src = '';
+  slDESC.textContent = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (sl.style.display !== 'flex') return;
+
+  if (e.key === 'Escape') closeSL();
+
+  if (e.key === 'ArrowRight') {
+    index = (index + 1) % imgs.length;
+    updateSL();
+  }
+
+  if (e.key === 'ArrowLeft') {
+    index = (index - 1 + imgs.length) % imgs.length;
+    updateSL();
+  }
+});
+
+sl.addEventListener('click', e => {
+  if (e.target === sl) closeSL();
+});
+</script>
+
+</body>
+</html>

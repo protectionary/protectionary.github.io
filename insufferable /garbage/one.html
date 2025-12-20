@@ -13,7 +13,6 @@ body {
   color:white;
   font-family:'JetBrains Mono', monospace;
   margin:0;
-  padding:0;
   display:flex;
   flex-direction:column;
   min-height:100vh;
@@ -32,6 +31,13 @@ header h2 {
   text-transform:lowercase;
 }
 
+header h5 {
+  margin:0.4rem 0 0;
+  font-weight:normal;
+  color:#888;
+  cursor:pointer;
+}
+
 .container {
   flex:1;
   max-width:1000px;
@@ -45,16 +51,6 @@ header h2 {
   padding-bottom:2rem;
 }
 
-.post h2 {
-  font-size:1.8rem;
-  text-transform:lowercase;
-  margin-bottom:0.5rem;
-}
-
-.post p {
-  color:#ccc;
-}
-
 .photo-grid {
   display:grid;
   grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
@@ -64,15 +60,14 @@ header h2 {
 
 .photo-grid img {
   width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
   border:2px solid white;
-  border-radius:4px;
   filter:grayscale(100%);
   cursor:pointer;
 }
 
-.photo-grid img:hover {
-  filter:grayscale(0%);
-}
+.photo-grid img:hover { filter:grayscale(0%); }
 
 footer {
   text-align:center;
@@ -82,9 +77,9 @@ footer {
   font-size:0.9rem;
 }
 
-/* spotlight */
+/* overlays */
 
-#spotlight {
+.overlay {
   display:none;
   position:fixed;
   inset:0;
@@ -95,31 +90,7 @@ footer {
   align-items:center;
 }
 
-#spotlight img {
-  max-width:90%;
-  max-height:80%;
-  border:2px solid white;
-  border-radius:4px;
-}
-
-#spotlight .desc {
-  margin-top:12px;
-  font-size:0.9rem;
-  color:#ccc;
-  border-top:1px solid white;
-  padding-top:8px;
-  max-width:80%;
-  text-align:center;
-}
-
-#spotlight .counter {
-  position:absolute;
-  bottom:20px;
-  font-size:0.85rem;
-  color:#888;
-}
-
-#spotlight button {
+.overlay button {
   position:absolute;
   top:20px;
   right:20px;
@@ -130,15 +101,68 @@ footer {
   padding:0.3rem 0.6rem;
   cursor:pointer;
 }
+
+/* spotlight */
+
+#spotlight img {
+  max-width:90%;
+  max-height:80%;
+  border:2px solid white;
+}
+
+#spotlight .desc {
+  margin-top:10px;
+  color:#ccc;
+  border-top:1px solid white;
+  padding-top:8px;
+  max-width:80%;
+  text-align:center;
+}
+
+#spotlight .counter {
+  position:absolute;
+  bottom:20px;
+  color:#888;
+  font-size:0.85rem;
+}
+
+/* changelog */
+
+#changelogBox {
+  max-width:600px;
+  border:2px solid white;
+  padding:1.5rem;
+  background:black;
+}
+
+#changelogBox h3 {
+  margin-top:0;
+  text-transform:lowercase;
+  cursor:pointer;
+}
+
+.md p { color:#ccc; margin:0.4rem 0; }
+.md ul { padding-left:1.2rem; color:#ccc; }
+.md li { margin-bottom:0.3rem; }
+.md strong { display:block; margin-top:0.8rem; }
+
+.dev {
+  display:none;
+  margin-top:1rem;
+  padding-top:0.8rem;
+  border-top:1px dashed white;
+  color:#aaa;
+  font-size:0.85rem;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h2>images to get you started</h2>
-<p>-Mickey-</p>
-<h5> site version 1.1</h4>
+  <h2>images to get you started</h2>
+  <p>-Mickey-</p>
+  <h5 onclick="openLog()">site version 1.2</h5>
 </header>
 
 <div class="container">
@@ -149,21 +173,21 @@ footer {
 <div class="photo-grid">
 <img src="https://i.imgur.com/OWSnzW7.png" data-desc="alternative to the pfp">
 <img src="https://i.imgur.com/ayf4YqR.png" data-desc="booba!">
-<img src="https://i.imgur.com/Y4eKsUY.png" data-desc="nice ass girl"> 
-<img src="https://i.imgur.com/WzccSgU.png" data-desc="and again"> 
-<img src="https://i.imgur.com/7wDTocJ.png" data-desc="arm is kinda glitched but hey, she's masturbating!"> 
-<img src="https://i.imgur.com/cDuzgJk.png" data-desc="here you may notice she's squirting... but now she's groping her tit!?">
-<img src="https://i.imgur.com/KTuXxwu.png" data-desc="good ol' masturbating.. with a dildo!">
-<img src="https://i.imgur.com/6whvRlB.png" data-desc="reverse cowgirl or wtv it's called">
-<img src="https://i.imgur.com/BXtA3oX.png" data-desc="either this is doggy style or face down ass up">
-<img src="https://i.imgur.com/Aec8S8u.png" data-desc="missionary.. nun much to say">
-<img src="https://i.imgur.com/vnvIjtr.png" data-desc="sucking the tip is the best">
-<img src="https://i.imgur.com/IXzjeXL.png" data-desc="here the prompt was handjob... i think it looks good...">
-<img src="https://i.imgur.com/FziZCl0.png" data-desc="in here there's hidden cum... hint : cheek.">
-<img src="https://i.imgur.com/gCC9ZF3.png" data-desc="better illustration of cum!">
-<img src="https://i.imgur.com/iZThOF4.png" data-desc="mmh... feet... don't know if i should put it in this category or in the kinky category. lmk">
-<img src="https://i.imgur.com/dYdMGeS.png" data-desc="foot job... but with cum!">
-<img src="https://i.imgur.com/gTOov5f.png" data-desc="cute cuddles :>">
+<img src="https://i.imgur.com/Y4eKsUY.png" data-desc="nice ass girl">
+<img src="https://i.imgur.com/WzccSgU.png" data-desc="and again">
+<img src="https://i.imgur.com/7wDTocJ.png" data-desc="arm is kinda glitched but hey">
+<img src="https://i.imgur.com/cDuzgJk.png" data-desc="she's squirting">
+<img src="https://i.imgur.com/KTuXxwu.png" data-desc="good ol masturbating">
+<img src="https://i.imgur.com/6whvRlB.png" data-desc="reverse cowgirl">
+<img src="https://i.imgur.com/BXtA3oX.png" data-desc="doggy style">
+<img src="https://i.imgur.com/Aec8S8u.png" data-desc="missionary">
+<img src="https://i.imgur.com/vnvIjtr.png" data-desc="sucking the tip">
+<img src="https://i.imgur.com/IXzjeXL.png" data-desc="handjob">
+<img src="https://i.imgur.com/FziZCl0.png" data-desc="hidden cum">
+<img src="https://i.imgur.com/gCC9ZF3.png" data-desc="better illustration">
+<img src="https://i.imgur.com/iZThOF4.png" data-desc="feet">
+<img src="https://i.imgur.com/dYdMGeS.png" data-desc="footjob">
+<img src="https://i.imgur.com/gTOov5f.png" data-desc="cute cuddles">
 </div>
 </div>
 
@@ -173,67 +197,103 @@ footer {
 </div>
 </div>
 
-<footer>
-protectionary did NOT make ts
-</footer>
+<footer>protectionary did NOT make ts</footer>
 
-<div id="spotlight">
+<!-- spotlight -->
+<div id="spotlight" class="overlay">
 <button onclick="closeSL()">X</button>
-<img src="">
+<img>
 <div class="desc"></div>
 <div class="counter"></div>
 </div>
 
+<!-- changelog -->
+<div id="log" class="overlay">
+<button onclick="closeLog()">X</button>
+<div id="changelogBox">
+<h3 id="logTitle">changelog</h3>
+<div id="logContent" class="md"></div>
+<div id="devNotes" class="dev md"></div>
+</div>
+</div>
+
 <script>
+/* spotlight */
 const sl = document.getElementById('spotlight');
 const slIMG = sl.querySelector('img');
 const slDESC = sl.querySelector('.desc');
 const slCOUNT = sl.querySelector('.counter');
-
-const imgs = Array.from(document.querySelectorAll('.photo-grid img'));
+const imgs = [...document.querySelectorAll('.photo-grid img')];
 let index = 0;
 
-function openSL(i) {
-  index = i;
-  sl.style.display = 'flex';
-  updateSL();
+imgs.forEach((img,i)=>img.onclick=()=>{index=i;sl.style.display='flex';updateSL();});
+
+function updateSL(){
+  slIMG.src=imgs[index].src;
+  slDESC.textContent=imgs[index].dataset.desc||'';
+  slCOUNT.textContent=(index+1)+' / '+imgs.length;
 }
+function closeSL(){ sl.style.display='none'; }
 
-function updateSL() {
-  slIMG.src = imgs[index].src;
-  slDESC.textContent = imgs[index].dataset.desc || '';
-  slCOUNT.textContent = (index + 1) + ' / ' + imgs.length;
-}
-
-imgs.forEach((img, i) => {
-  img.addEventListener('click', () => openSL(i));
-});
-
-function closeSL() {
-  sl.style.display = 'none';
-  slIMG.src = '';
-  slDESC.textContent = '';
-}
-
-document.addEventListener('keydown', e => {
-  if (sl.style.display !== 'flex') return;
-
-  if (e.key === 'Escape') closeSL();
-
-  if (e.key === 'ArrowRight') {
-    index = (index + 1) % imgs.length;
-    updateSL();
+document.addEventListener('keydown',e=>{
+  if(sl.style.display==='flex'){
+    if(e.key==='Escape') closeSL();
+    if(e.key==='ArrowRight'){index=(index+1)%imgs.length;updateSL();}
+    if(e.key==='ArrowLeft'){index=(index-1+imgs.length)%imgs.length;updateSL();}
   }
+  if(e.key==='Escape') closeLog();
+});
+sl.onclick=e=>{if(e.target===sl)closeSL();};
 
-  if (e.key === 'ArrowLeft') {
-    index = (index - 1 + imgs.length) % imgs.length;
-    updateSL();
+/* markdown (fixed lists) */
+function md(t){
+  let h=t.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+  h=h.replace(/(?:^|\n)- (.*)/g,'<li>$1</li>');
+  h=h.replace(/(<li>.*<\/li>)/gs,'<ul>$1</ul>');
+  h=h.replace(/\n{2,}/g,'</p><p>');
+  return '<p>'+h+'</p>'.replace(/<p><ul>/g,'<ul>').replace(/<\/ul><\/p>/g,'</ul>');
+}
+
+/* changelog */
+const log=document.getElementById('log');
+const logContent=document.getElementById('logContent');
+const devNotes=document.getElementById('devNotes');
+let clicks=0;
+
+const changelogMD=`
+**v1.2**
+- optimizations (alot)
+- changelog
+
+**v1.1**
+- spotlight
+- arrow navigation
+- esc to close
+
+**v1.0**
+- bare bones site (thank god it wasn't published)
+`;
+
+const devMD=`
+**dev notes**
+- cloudflare is a mistake
+- have fun gooning
+- no regrets
+`;
+
+function openLog(){
+  log.style.display='flex';
+  logContent.innerHTML=md(changelogMD);
+}
+function closeLog(){ log.style.display='none'; }
+
+document.getElementById('logTitle').onclick=()=>{
+  if(++clicks>=5){
+    devNotes.style.display='block';
+    devNotes.innerHTML=md(devMD);
   }
-});
-
-sl.addEventListener('click', e => {
-  if (e.target === sl) closeSL();
-});
+};
+log.onclick=e=>{if(e.target===log)closeLog();};
 </script>
 
 </body>

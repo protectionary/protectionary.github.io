@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilium | France Exploration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">Lilium.</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero" class="active">Acasă</a></li>
+                    <li><a href="#destinatii">Destinații</a></li>
+                    <li><a href="#pachete">Pachete</a></li>
+                    <li><a href="#echipa">Echipa</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container fade-up">
+                <h1>Franța. <br>Excepțională.</h1>
+                <p>O incursiune în inima culturii și geografiei franceze prin prisma serviciilor premium Lilium.</p>
+                <a href="#pachete" class="hero-cta">Descoperă pachetele →</a>
+            </div>
+        </section>
+
+        <!-- Destinații Bento -->
+        <section class="section-padding" id="destinatii">
+            <div class="container">
+                <h2 class="fade-up" style="font-size: 2.5rem; margin-bottom: 40px;">Esente Geografice.</h2>
+                <div class="bento-grid fade-up">
+                    <div class="bento-item col-8 row-2 info-trigger" data-title="Coasta de Azur" data-info="Coasta de Azur (Côte d'Azur) este una dintre cele mai faimoase regiuni din lume, cunoscută pentru apele sale azurii, satele pitorești cocoțate pe dealuri și stilul de viață luxuriant. De la Nisa la Saint-Tropez, fiecare kilometru de coastă oferă un spectacol geografic unic unde marea întâlnește muntele.">
+                        <img src="https://images.unsplash.com/photo-1646047978605-fadab8bebb94?q=80&w=1170&auto=format&fit=crop" class="bento-img">
+                        <div class="item-content">
+                            <h3>Coasta de Azur.</h3>
+                            <p>Esența relaxării mediteraneene. <span class="read-more">Apasă pentru detalii</span></p>
+                        </div>
+                    </div>
+                    <div class="bento-item col-4 info-trigger" data-title="Alpii Francezi" data-info="Alpii Francezi sunt casă pentru unele dintre cele mai înalte vârfuri din Europa, inclusiv legendarul Mont Blanc. Această regiune oferă un relief glaciar spectaculos, lacuri cristaline și oportunități infinite pentru explorarea geografică a înălțimilor.">
+                        <img src="https://plus.unsplash.com/premium_photo-1721140972526-201bb3abef28?q=80&w=1170&auto=format&fit=crop" class="bento-img">
+                        <div class="item-content">
+                            <h3>Alpii.</h3>
+                            <p>Înălțimi spectaculoase. <span class="read-more">Află mai multe</span></p>
+                        </div>
+                    </div>
+                    <div class="bento-item col-4 info-trigger" data-title="Valea Loarei" data-info="Valea Loarei, cunoscută sub numele de 'Grădina Franței', este celebră pentru densitatea sa de castele istorice și peisajele sale culturale protejate de UNESCO. Este locul unde arhitectura renascentistă se îmbină armonios cu cursul lin al fluviului Loara.">
+                        <img src="https://images.unsplash.com/photo-1526817609938-a708708cf90f?q=80&w=1170&auto=format&fit=crop" class="bento-img">
+                        <div class="item-content">
+                            <h3>Valea Loarei.</h3>
+                            <p>Istorie regală. <span class="read-more">Descoperă</span></p>
+                        </div>
+                    </div>
+                    <div class="bento-item col-12 info-trigger" data-title="Cultura și Arhitectura" data-info="Franța este centrul global al artei și arhitecturii monumentale. De la structurile gotice ale catedralelor la designul futurist din marile metropole, patrimoniul cultural francez este o dovadă a geniului uman multiplicat de-a lungul secolelor.">
+                        <div class="item-content">
+                            <h3>Cultura și Arhitectura.</h3>
+                            <p>Patrimoniu UNESCO distilat la nivel de artă monumentală. <span class="read-more">Vezi detalii</span></p>
+                            <img src="https://images.unsplash.com/photo-1526817609938-a708708cf90f?q=80&w=1170&auto=format&fit=crop" class="bento-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pachete Section -->
+        <section class="section-padding" id="pachete">
+            <div class="container">
+                <h2 class="fade-up" style="font-size: 2.5rem; margin-bottom: 40px;">Pachete Disponibile.</h2>
+                <div class="tour-grid fade-up">
+                    <div class="tour-card info-trigger" data-title="Magia Parisului" data-price="480€" data-info="O incursiune de neuitat în Orașul Luminilor. Pachetul include vizite ghidate la Muzeul Louvre, unde poți admira Mona Lisa, ascensiune în Turnul Eiffel pentru o panoramă de 360 de grade și o croazieră pe Sena la apus. Cazarea este asigurată în hoteluri de 4 stele din zona centrală.">
+                        <img src="https://images.unsplash.com/photo-1583265266785-aab9e443ee68?q=80&w=1074&auto=format&fit=crop">
+                        <div class="tour-body">
+                            <span class="tour-tag">4 Zile • City Break</span>
+                            <h3>Magia Parisului</h3>
+                            <p class="tour-snippet">Louvre, Eiffel și croazieră pe Sena.</p>
+                            <div class="tour-footer">
+                                <span class="price">480€</span>
+                                <button class="btn-small">Detalii</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tour-card info-trigger" data-title="Grădinile Versailles" data-price="550€" data-info="Explorează opulența regilor Franței. Acest tur te poartă prin Galeria Oglinzilor, apartamentele regale și celebrele grădini proiectate de André Le Nôtre. Pachetul include transport privat de la Paris și ghid autorizat pentru o experiență istorică profundă.">
+                        <img src="https://images.unsplash.com/photo-1585076491343-592f07930a99?q=80&w=1074&auto=format&fit=crop">
+                        <div class="tour-body">
+                            <span class="tour-tag">3 Zile • Istorie</span>
+                            <h3>Grădinile Versailles</h3>
+                            <p class="tour-snippet">Opulență regală și istorie vie.</p>
+                            <div class="tour-footer">
+                                <span class="price">550€</span>
+                                <button class="btn-small">Detalii</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tour-card info-trigger" data-title="Disneyland Paris" data-price="590€" data-info="Magia copilăriei prinde viață pentru întreaga familie. Pachetul include acces pentru 5 zile în ambele parcuri tematice (Disneyland Park și Walt Disney Studios), cazare în hoteluri tematice Disney și mic dejun inclus. Transport rapid garantat de la aeroport.">
+                        <img src="https://images.unsplash.com/photo-1605713635131-60df11253e9f?q=80&w=737&auto=format&fit=crop">
+                        <div class="tour-body">
+                            <span class="tour-tag">5 Zile • Family</span>
+                            <h3>Disneyland</h3>
+                            <p class="tour-snippet">Aventura supremă pentru familii.</p>
+                            <div class="tour-footer">
+                                <span class="price">590€</span>
+                                <button class="btn-small">Detalii</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="section-padding" id="echipa">
+            <div class="container">
+                <h2 class="fade-up" style="font-size: 2.5rem; margin-bottom: 40px;">Echipa Lilium.</h2>
+                <div class="team-container fade-up" style="position: relative;">
+                    <img src="echipa.jpeg" class="team-image" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop'">
+                    
+                    <!-- Simplified Team Markers -->
+                    <div class="team-marker" style="top: 20%; left: 18%;">
+                        <div class="info-plain"><h3>Erdogan Erkan</h3><p>Strategy & Tech</p></div>
+                    </div>
+                    <div class="team-marker" style="top: 82%; left: 45%;">
+                        <div class="info-plain"><h3>Marius Trincă</h3><p>Cultural Guide</p></div>
+                    </div>
+                    <div class="team-marker" style="top: 72%; left: 80%;">
+                        <div class="info-plain"><h3>Andrei Iamandi</h3><p>Brand Design</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="footer" id="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="fade-up">
+                        <h2 style="font-size: 3rem; margin-bottom: 20px;">Contact.</h2>
+                        <p style="color: var(--gray-600);">Suntem aici pentru călătoria ta.</p>
+                        <div style="margin-top: 40px; font-size: 0.9rem;">
+                            <p>+40 512 345 678</p>
+                            <p>office@lilium.ro</p>
+                        </div>
+                    </div>
+                    <div class="fade-up">
+                        <form id="contactForm">
+                            <input type="text" placeholder="Nume" required>
+                            <input type="email" placeholder="Email" required>
+                            <textarea rows="4" placeholder="Mesaj" required></textarea>
+                            <button type="submit" class="btn-large">Trimite</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Info Modal -->
+    <div class="modal-overlay" id="infoModal">
+        <div class="modal">
+            <button class="modal-close"><i class="ph ph-x"></i></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Titlu Info</h2>
+                    <span id="modalPriceTag" class="modal-price"></span>
+                </div>
+                <div class="modal-body">
+                    <p id="modalDescription">Informații detaliate vor apărea aici.</p>
+                </div>
+                <div class="modal-footer" id="modalFooter" style="display: none; margin-top: 30px;">
+                    <button class="btn-large" style="width: 100%;">Rezervă Acum</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

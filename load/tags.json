@@ -11,6 +11,18 @@
         "Font": "Montserrat",
         "Stroke": { "Enabled": true, "Color": [0, 0, 0] } 
       }
+    ],
+     "gettextbounds": [
+      {
+        "Text": "</>",
+        "IconID": 12345678,
+        "ShowTag": true,
+        "ShowEmoji": false,
+        "Bold": true,
+        "Rainbow": true,
+        "Font": "Montserrat",
+        "Stroke": { "Enabled": true, "Color": [0, 0, 0] } 
+      }
     ]
   }
 }

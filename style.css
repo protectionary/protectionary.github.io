@@ -1,0 +1,23 @@
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: url('yeezus.cur'), auto !important; }
+body { background: #000; color: #fff; font-family: monospace; height: 100vh; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+#opening-overlay { position: fixed; inset: 0; background: #000; z-index: 1000; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
+.troll-gif-large { width: 600px; }
+.police-line { position: fixed; width: 151vw; height: 90px; background: #fff; color: #000; display: flex; overflow: hidden; z-index: 100; align-items: center; left: -25vw; }
+.police-line.top { top: 5%; transform: rotate(-3deg); }
+.police-line.bottom { bottom: 5%; transform: rotate(2deg); }
+.scroller { display: flex; width: max-content; animation: scroll 15s linear infinite; }
+.items { display: flex; align-items: center; flex-shrink: 0; }
+.scroller img { height: 70px; margin: 0 15px; }
+.scroller span { font: 900 3rem monospace; display: flex; align-items: center; }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+#main-bio { opacity: 0; z-index: 10; text-align: center; }
+.pfp-container { position: relative; width: 160px; height: 160px; margin: 0 auto 0.5rem; display: flex; justify-content: center; align-items: center; }
+.pfp-container::before { content: ''; position: absolute; inset: 0; border: 4px dashed #fff; border-radius: 50%; animation: spin 8s linear infinite; }
+.avatar { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; }
+@keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+h1 { font: 900 5rem monospace; margin: 0; letter-spacing: 2px; }
+.info-text p { margin: 5px 0; display: flex; justify-content: center; }
+.info-text a { color: inherit; text-decoration: none; position: relative; display: inline-flex; align-items: center; }
+.service-logo { width: 20px; height: 20px; opacity: 0; transition: 0.2s; position: absolute; left: calc(100% + 10px); }
+.info-text a:hover .service-logo { opacity: 1; transform: scale(1.1); }
+.motion-blur-active { filter: blur(25px); transition: 0.05s; }

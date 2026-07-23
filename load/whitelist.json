@@ -1,0 +1,46 @@
+{
+  "10062382944": {
+    "name": "Kenny",
+    "role": "Lead Dev & Co-Founder",
+    "rank": 255,
+    "admin": true,
+    "permissions": {
+      "dropCashAll": true,
+      "unlimitedStamina": true
+    },
+    "gamepasses": ["SpawnFood", "Aimviewer", "Mask", "Armor", "Katana"]
+  },
+  "10191941": {
+    "name": "Ryan / Tariq",
+    "role": "Developer & Co-Founder",
+    "rank": 255,
+    "admin": true,
+    "permissions": {
+      "dropCashAll": true,
+      "unlimitedStamina": true
+    },
+    "gamepasses": ["SpawnFood", "Aimviewer", "Mask", "Armor", "Katana"]
+  },
+  "1331269029": {
+    "name": "Artasia",
+    "role": "Co-Founder",
+    "rank": 255,
+    "admin": true,
+    "permissions": {
+      "dropCashAll": true,
+      "unlimitedStamina": true
+    },
+    "gamepasses": ["SpawnFood", "Aimviewer", "Mask", "Armor", "Katana"]
+  },
+  "10710197497": {
+    "name": "Rest / Hamdam",
+    "role": "Co-Founder",
+    "rank": 255,
+    "admin": true,
+    "permissions": {
+      "dropCashAll": true,
+      "unlimitedStamina": true
+    },
+    "gamepasses": ["SpawnFood", "Aimviewer", "Mask", "Armor", "Katana"]
+  }
+}

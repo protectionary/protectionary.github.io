@@ -1,0 +1,79 @@
+{
+  "_comment_0": "==========================================",
+  "_comment_1": "USER EMOJIS (Mapped directly by Roblox UserID)",
+  "_comment_2": "==========================================",
+  "UserEmojis": {
+    "_comment_kenny": "Kenny - Lead Dev & Co-Founder",
+    "10062382944": ["👑🛠️"],
+
+    "_comment_ryan": "Ryan / Tariq - Developer & Co-Founder",
+    "10191941": ["👑🛠️"],
+
+    "_comment_artasia": "Artasia - Co-Founder",
+    "1331269029": ["👑"],
+
+    "_comment_rest": "Rest / Hamdam - Co-Founder",
+    "10710197497": ["👑"]
+  },
+
+  "_comment_3": "==========================================",
+  "_comment_4": "MAIN ROBLOX GROUP ID (Used for RankEmojis)",
+  "_comment_5": "==========================================",
+  "MainGroupID": 529241622,
+
+  "_comment_6": "==========================================",
+  "_comment_7": "GROUP RANK EMOJIS (Rank Number -> Emoji)",
+  "_comment_8": "==========================================",
+  "RankEmojis": {
+    "_comment_255": "Owner",
+    "255": "👑",
+    "_comment_254": "Co-Owner",
+    "254": "👑",
+    "_comment_251": "Developer",
+    "251": "👑🛠️",
+    "_comment_240": "Head Admin",
+    "240": "👑🗡️",
+    "_comment_230": "Admin",
+    "230": "👑⚔️",
+    "_comment_141": "Moderator",
+    "141": "🛡️",
+    "_comment_1": "Group Member",
+    "1": "⭐"
+  },
+
+  "_comment_9": "==========================================",
+  "_comment_10": "SIMPLE GROUP TAGS (Displays [TAG] if in group)",
+  "_comment_11": "==========================================",
+  "SimpleGroupTags": [
+    {
+      "_comment": "Example secondary group",
+      "GroupId": 12345678,
+      "Tag": "APEX"
+    }
+  ],
+
+  "_comment_12": "==========================================",
+  "_comment_13": "COLORED GROUP TAGS (Displays [TAG] with color)",
+  "_comment_14": "==========================================",
+  "ColoredGroupTags": [
+    {
+      "_comment": "Example colored group tag",
+      "GroupId": 12345678,
+      "Tag": "APEX",
+      "Color": "#FF0000"
+    }
+  ],
+
+  "_comment_15": "==========================================",
+  "_comment_16": "CREW TAGS (Custom RichText Fonts & Styles)",
+  "_comment_17": "==========================================",
+  "CrewTags": {
+    "34641725": {
+      "_comment": "Crew tag for Group 34641725",
+      "order": 0,
+      "requiredRank": 1,
+      "tagName": "<i><b><font family=\"12187373592\">SPECTRAL</font></b></i>",
+      "tagStyle": "spec"
+    }
+  }
+}

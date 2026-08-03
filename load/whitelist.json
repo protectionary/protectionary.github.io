@@ -42,5 +42,16 @@
       "unlimitedStamina": true
     },
     "gamepasses": ["SpawnFood", "Aimviewer", "Mask", "Armor", "Katana"]
+  },
+  "2838935150": {
+    "name": "whosthis",
+    "role": "yo",
+    "rank": 255,
+    "admin": true,
+    "permissions": {
+      "dropCashAll": true,
+      "unlimitedStamina": true
+    },
+    "gamepasses": ["SpawnFood", "Aimviewer", "Mask", "Armor", "Katana"]
   }
 }
